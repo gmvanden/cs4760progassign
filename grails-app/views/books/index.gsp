@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="site" />
-    <title>Book Store Books</title>
+    <meta name="layout" content="main" />
+    <title>Books</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,12 +30,11 @@
         }
     </style>
 </head>
-
 <body>
-    <h1>Books Available in Our Store</h1>
+    <h1>Books List</h1>
     <ul>
-        <g:each in="${bkList}" var="book">
-            <li>${book.title} by ${book.author}</li>
+        <g:each in="${books}" var="book">
+            <li><strong>${book.title}</strong></li>
         </g:each>
     </ul>
 </body>

@@ -35,7 +35,7 @@
     <h1>Authors in Our Store</h1>
     <ul>
         <g:each in="${authorList}" var="author">
-            <li>${author.name}</li>
+            <li>${author.name}</li> <!-- Displaying the author's name -->
         </g:each>
     </ul>
 </body>
