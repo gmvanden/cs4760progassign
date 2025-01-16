@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="site"/>
+    <meta name="layout" content="index"/>
     <title>Book Store Home</title>
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="myStyles.css"/>
@@ -13,26 +13,27 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Book Store</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">
-                                ${c.fullName.tokenize('.')[-1].replaceAll('Controller$', '')}
-                            </g:link>
-                        </li>
-                    </g:each>
-                </ul>
-            </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Book Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
+                    <li class="nav-item mx-2">
+                        <g:link controller="${c.logicalPropertyName}" class="nav-link">
+                            ${c.fullName.tokenize('.')[-1].replaceAll('Controller$', '')}
+                        </g:link>
+                    </li>
+                </g:each>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Featured Books Section -->
     <section id="books" class="container my-5">

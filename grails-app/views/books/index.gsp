@@ -31,11 +31,24 @@
     </style>
 </head>
 <body>
-    <h1>Books List</h1>
-    <ul>
-        <g:each in="${books}" var="book">
-            <li><strong>${book.title}</strong></li>
-        </g:each>
-    </ul>
+    <div id="content" role="main">
+        <div class="container">
+            <section class="row">
+                <div id="list-book" class="col-12 content scaffold-list" role="main">
+                    <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
+                    <f:table collection="${bookList}" />
+
+                    <g:if test="${bookCount > params.int('max')}">
+                    <div class="pagination">
+                        <g:paginate total="${bookCount ?: 0}" />
+                    </div>
+                    </g:if>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

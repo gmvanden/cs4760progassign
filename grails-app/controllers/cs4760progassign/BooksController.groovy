@@ -1,4 +1,7 @@
 package cs4760progassign
+import grails.validation.ValidationException
+import static org.springframework.http.HttpStatus.*
+
 class BooksController {
 
     def index() {
