@@ -1,11 +1,14 @@
 package cs4760progassign
+
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
 class BooksController {
 
-    def index() {
-        def books = Book.list() // Assuming Book is a domain class
-        render(view: "index", model: [books: books])
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        def bookList = Book.list(params)
+        def bookCount = Book.count()
+        render(view: "index", model: [bookList: bookList, bookCount: bookCount])
     }
 }
