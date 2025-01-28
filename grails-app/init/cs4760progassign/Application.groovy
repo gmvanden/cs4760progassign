@@ -11,5 +11,3 @@ class Application extends GrailsAutoConfiguration {
         GrailsApp.run(Application, args)
     }
 }
-
-grails.plugin.springsecurity.logout.postOnly = false
